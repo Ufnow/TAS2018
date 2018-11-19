@@ -1,0 +1,23 @@
+<div class="col">
+  <h2 class="text-center">Edytuj użytkowników</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="login">Login:</label>
+      <input formControlName="login" placeholder="login" name="login" class="form-control" id="login" required>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input formControlName="password" placeholder="password" name="password" class="form-control" id="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="permission">Permission:</label>
+      <input type="permission" formControlName="permission" placeholder="permission" name="permission" class="form-control" id="permission" required>
+    </div>
+
+    <button class="btn btn-success">Accept</button>
+    <button class="btn btn-primary" routerLink="list-users">Back</button>
+  </form>
+</div>
