@@ -1,0 +1,33 @@
+<div class="col">
+  <h2>Users</h2>
+  <button class="btn btn-primary" (click)="addUser()">Add user</button>
+  
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th class="hidden">Id</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Permission</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let users of users">
+        <td class="hidden">{{ users.id }}</td>
+        <td>{{ users.login }}</td>
+        <td>{{ users.password }}</td>
+        <td>{{ users.permission }}</td>
+        <td>
+          <button class="btn btn-success" (click)="editUser(users)">
+            Edit
+          </button>
+          <button class="btn btn-danger" (click)="deleteUser(users)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button class="btn btn-primary" (click)="listProduct()">Products list</button>
+</div>

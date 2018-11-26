@@ -1,0 +1,30 @@
+<div class="col">
+  <h2 class="text-center">Add user</h2>
+  
+  <form [formGroup]="addForm" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm">
+  
+    
+    
+    <div class="form-group">
+      <label for="login">Login:</label>
+      <input formControlName="login" required pattern="^[A-z]([a-z]+[0-9]*)"  placeholder="login"  name="login"  class="form-control" id="login" required >
+      <div *ngIf="login.errors?.pattern">Login name is valid or already taken</div>
+     
+    </div>
+    
+  
+    
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input formControlName="password" placeholder="password" name="password" class="form-control" id="password" required>
+    </div>
+
+    <div class="form-group">
+      <label for="permission">Permission:</label>
+      <input type="permission" formControlName="permission" placeholder="permission" name="permission" class="form-control" id="permission" required>
+    </div>
+
+    <button class="btn btn-success">Action</button>
+    <button class="btn btn-primary" routerLink="list-users">Back</button>
+  </form>
+</div>
